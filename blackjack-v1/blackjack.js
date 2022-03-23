@@ -8,45 +8,13 @@ let hasBlackjack = false;
 let isAlive = true;
 
 
-// beginning of inner text declarations
-let message = "";
-let messageEl = "time to play a round :)  ";
-let plentyStories = "<h3>take a seat, and go!</h3> <p>Cards:</p> <p>Sum:</p>";
-
-// button state variables
-// let buttonState1 = "new game";
-let buttonState2 = "start game";
-let buttonState3 = "draw card";
-
 function startGame() {
+  console.log("the game is the game")
+  let rules = document.getElementById("rules-id");
+  rules.innerHTML = "<h2>the rules are simple</h2> <p>you roll the die twice to pick two cards. the sum of your cards is called a <b>HAND</b>. if your hand is 21, you get <b>BLACKJACK</b> and the game ends with you as the winner. If your hand is less than 21, you can roll two more times to stand a chance to get 21. if however, your hand exceeds 21, you <b>BUST</b>. this means you have lost and the game is over.</p> <h3>try getting a 21!</h3>";
 
-  document.getElementById("message-el").textContent = messageEl;
-  document.getElementById("button-text").textContent = buttonState2;
-
-  document.getElementById("plenty-stories").innerHTML = plentyStories;
-  document.getElementById("button-text").textContent = buttonState3;
-
-  drawCard();
+  let startGameButton = document.getElementById("button-text");
+  startGameButton.innerText = "BEGIN"
 
 }
 
-
-
-function gameLogic() {
-  if (sum <= 20) {
-    message = "do you want to draw a new card?  ";
-    console.log(message);
-  } 
-  
-  else if (sum === 21) {
-    message = "odogwu don get blackjack!!";
-    console.log(message);
-    hasBlackjack = true;
-  } 
-  
-  else {
-    isAlive = false;
-    message = "sorry, you're out :( ";
-    console.log(message);
-  }
-}
